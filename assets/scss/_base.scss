@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: $font-default !important;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+    @include transition-all;
+}
+
+* a {
+    text-decoration: none !important;
+    color: unset;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    line-height: 1.0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+:focus {
+    outline: 0;
+}
+
+input[type=text], input[type=email], input[type=tel], select {
+    width: 100%;
+    padding: 1.3em 1.5em;
+    border: 1px solid $color-gray5;
+    color: $color-gray1;
+    font-size: 12px;
+    @media screen and (max-width: 768px) {
+        padding: 1em 1.3em;
+        font-size: 3.2vw;
+    }
+
+    &:focus {
+        border-color: #CCC;
+    }
+
+    &::placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder {
+        color: #8B8B8B;
+    }
+
+    &::placeholder {
+        opacity: 1;
+    }
+}
+
+textarea {
+    width: 100%;
+    padding: 1em 1.5em;
+    border: 1px solid $color-gray5;
+    color: $color-gray1;
+    font-size: $font-size-normal;
+    line-height: 1.5;
+    @media screen and (max-width: 768px) {
+        padding: 1em 0.7em;
+        font-size: $font-size-xxxxl-sp;
+    }
+
+    &:focus {
+        border-color: $color-gray1;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.effect {
+    overflow: hidden;
+}
+
+.effect img {
+    @include transition(transform, .5s, ease);
+}
+
+.background-zoom:hover img {
+    @include transform(scale(1.05));
+}
+
+.pc, .tb, .sp {
+    display: none;
+}
+
+@media screen and (min-width: 1201px) {
+    .pc {
+        display: block;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .tb {
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sp {
+        display: block;
+    }
+}
+
+.checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+    line-height: 1;
+    cursor: pointer;
+    font-size: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkbox-mark {
+            background-color: $color-white;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .checkbox-mark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 1em;
+        width: 1em;
+        background-color: white;
+        border: 0.1em solid $color-gray1;
+        border-radius: 0.1em;
+        transform: translateY(-50%);
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 0.15em;
+            top: 0.4em;
+            width: 0.15em;
+            height: 0.4em;
+            border: solid #191819;
+            border-width: 0 0.2em 0.2em 0;
+            @include transform(rotate(45deg) translate(-50%, -50%));
+        }
+    }
+
+    &:hover input ~ .checkbox-mark {
+        background-color: white;
+    }
+}
+
+.radio-label {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+    line-height: 1;
+    cursor: pointer;
+    font-size: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .radio-mark {
+            background-color: $color-white;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .radio-mark {
+        font-size: inherit;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 1em;
+        width: 1em;
+        background-color: $color-white;
+        border: 1px solid $color-gray1;
+        // border-color: inherit;
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            width: 0.6em;
+            height: 0.6em;
+            border-radius: 50%;
+            background-color: $color-gray1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &:hover input ~ .radio-mark {
+        background-color: $color-gray4;
+    }
+}
