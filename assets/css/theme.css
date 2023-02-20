@@ -390,11 +390,11 @@ textarea:focus {
 }
 @media only screen and (min-width: 768px) {
   .section.section--medal .section__title h2 {
-    font-size: 3.5vw;
+    font-size: 3.6vw;
   }
 }
 .section.section--medal .section__content {
-  font-size: 3.5vw;
+  font-size: 3.6vw;
 }
 .section.section--medal .section__content .medal-list {
   display: -webkit-box;
@@ -862,12 +862,12 @@ textarea:focus {
 }
 @media only screen and (max-width: 1000px) {
   .section.section--store .section_content .content-wrapper .body .body_img {
-    right: 3vw;
+    right: 0vw;
   }
 }
 @media only screen and (max-width: 768px) {
   .section.section--store .section_content .content-wrapper .body .body_img {
-    right: 6vw;
+    right: 0vw;
   }
 }
 .section.section--store .section_content .content-wrapper .body .body_img--medal {
