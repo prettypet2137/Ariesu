@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* トップページのスタイル*/
+
+.page-header {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+
+	.logo {
+		float: right;
+		margin: 1vw;
+		
+		.logo1 { 
+			display: inline; 
+			width: 9.48vw; 
+		}
+		.logo2 { 
+			display: inline; 
+			width: 14.7vw; 
+			margin-left: -1.3vw;
+		}
+	}
+
+}
+

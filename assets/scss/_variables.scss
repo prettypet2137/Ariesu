@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Hiragino Mincho";
+    src: url("../font/Hiragino Mincho ProN W3.otf") format("opentype");
+}
+
+/* 変数 */
+// フォント
+$font-default: "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+$font-mainview: "Hiragino Mincho", "游ゴシック", YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+$font-number: "Arial";
+
+// ベーシックカラー
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-gray1: #191819;
+$color-gray2: #b8b8b8;
+$color-gray3: #797979;
+$color-gray4: #f9f9f9;
+$color-gray5: #d3d3de;
+$color-gray6: #8f8f8f;
+$color-blue1: #173b63;
+$color-blue2: #54a8e5;
+$color-gold: #643e24;
+$color-red: #ef3623;
+$color-green: #00ff00;
+$color-green1: #13c108;
+$color-green2: #b6ffb6;
+$color-yellow1: #e1d2a2;
+$color-transparent: transparent;
+
+// テーマカラー
+$color-section-title: $color-white;
+$color-section-content: $color-black;
+$color-menu: $color-gray1;
+$color-menu-white: $color-white;
+$color-header: $color-gray2;
+
+// フォントサイス
+$font-size-xxxxxxxl: 51px;
+$font-size-xxxxxxl: 46px;
+$font-size-xxxxl: 30px;
+$font-size-xxxl: 24px;
+$font-size-xxl: 18px;
+$font-size-xl: 16px;
+$font-size-l: 15px;
+$font-size-normal: 14px;
+$font-size-s: 13px;
+$font-size-xs: 12px;
+$font-size-xxs: 10px;
+
+$font-size-xxxxxxxxxl-sp: 8vw;
+$font-size-xxxxxxxxl-sp: 6.8vw;
+$font-size-xxxxxxxl-sp: 6vw;
+$font-size-xxxxxxl-sp: 5.33vw;
+$font-size-xxxxxl-sp: 4vw;
+$font-size-xxxxl-sp: 3.73vw;
+$font-size-xxxl-sp: 3.2vw;
+$font-size-xxl-sp: 2.4vw;
+$font-size-xl-sp: 2.13vw;
+$font-size-l-sp: 2vw;
+$font-size-normal-sp: 1.86vw;
+$font-size-s-sp: 1.73vw;
+$font-size-xs-sp: 1.6vw;
+$font-size-xxs-sp: 1.3vw;
+
+$font-size-menu: $font-size-normal;
+$font-size-menu-contact: $font-size-s;
+$font-size-text: $font-size-xs;
+$font-size-button: $font-size-xs;
+$font-size-section-title: $font-size-xxxxxxl;
+$font-size-section-title-small: $font-size-normal;
+$font-size-intro: $font-size-normal;
+$font-size-breadcrumb: $font-size-xs;
+$font-size-dt: 20px;
+$font-size-dd: $font-size-normal;
+$font-size-category-anchor: 18px;
+$font-size-product-image-caption: 16px;
+$font-size-main-panel-title: 36px;
+
+$font-size-menu-sp: $font-size-normal-sp;
+$font-size-menu-contact-sp: $font-size-s-sp;
+$font-size-text-sp: $font-size-xxxxxl-sp;;
+$font-size-button-sp: $font-size-xxxxxl-sp;;
+$font-size-section-title-sp: $font-size-xxxxxxxxxl-sp;
+$font-size-section-title-small-sp: $font-size-xxxxxl-sp;;
+$font-size-intro-sp: $font-size-xxxxl-sp;;
+$font-size-breadcrumb-sp: $font-size-xxxl-sp;
+$font-size-dt-sp: 4.5vw;
+$font-size-dd-sp: $font-size-xxxxl-sp;
+$font-size-category-anchor-sp: 3.5vw;
+$font-size-product-image-caption-sp: $font-size-xxxxl-sp;
+$font-size-main-panel-title-sp: $font-size-xxxxxxxl-sp;
+
+@mixin flex-center {
+    @include display-flex();
+    @include align-items-center();
+    @include justify-content-center();
+}
+
+@mixin flex-center-v {
+    @include display-flex();
+    @include align-items-center();
+}
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin align-items-center {
+    @include align-items(center);
+}
+
+@mixin align-items-flex-start {
+    @include align-items(flex-start);
+}
+
+@mixin align-items-flex-end {
+    @include align-items(flex-end);
+}
+
+@mixin align-items($v) {
+    -webkit-box-align: $v;
+    -webkit-flex-align: $v;
+    -ms-flex-align: $v;
+    -webkit-align-items: $v;
+    align-items: $v;
+}
+
+@mixin justify-content-center {
+    @include justify-content(center);
+}
+
+@mixin justify-content-space-evenly {
+    @include justify-content(space-evenly);
+}
+
+@mixin justify-content-space-around {
+    @include justify-content(space-around);
+    -webkit-box-pack: distribute;
+    -ms-flex-pack: distribute;
+}
+
+@mixin justify-content-space-between {
+    @include justify-content(space-between);
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+}
+
+@mixin justify-content-flex-start {
+    @include justify-content(flex-start);
+    -webkit-box-pack: start;
+}
+
+@mixin justify-content-flex-end {
+    @include justify-content(flex-end);
+    -webkit-box-pack: end;
+}
+
+@mixin justify-content($v) {
+    -webkit-box-pack: $v;
+	-webkit-justify-content: $v;
+    -ms-flex-pack: $v;
+	-moz-box-pack: $v;
+    justify-content: $v;
+}
+
+@mixin flex-direction-row {
+    -webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-moz-box-orient: horizontal;
+	-moz-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+@mixin flex-direction-column {
+    -webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+@mixin flex-direction-column-reverse {
+	-webkit-box-direction: reverse;
+	-moz-box-direction: reverse;
+	-ms-flex-direction: column-reverse;
+	flex-direction: column-reverse;
+}
+
+@mixin flex-direction-row-reverse {
+	-webkit-box-direction: reverse;
+	-moz-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+@mixin flex-wrap-wrap {
+    @include flex-wrap(wrap);
+}
+
+@mixin flex-wrap($v) {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin transition-none {
+    -webkit-transition: none;
+		-o-transition: none;
+			transition: none;
+}
+
+@mixin transition($attr, $sec, $ease) {
+	-webkit-transition: $attr $sec $ease;
+		-o-transition: $attr $sec $ease;
+			transition: $attr $sec $ease;
+}
+
+@mixin transition-all {
+	@include transition(all, .3s, ease);
+}
+
+@mixin transform($v) {
+    -webkit-transform: $v;
+    -ms-transform: $v;
+    transform: $v;
+}
+
+@mixin flex($v) {
+    -webkit-flex: $v;
+    -webkit-box-flex: $v;
+    -webkit-flex: $v;
+	-moz-box-flex: $v;
+    -ms-flex: $v;
+    flex: $v;
+}
